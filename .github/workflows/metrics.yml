@@ -12,14 +12,22 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: General
+      - name: Metrics: Left
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.svg
+          filename: metrics.left.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          config_order: base.header, base.activity+community, base.repositories, isocalendar, languages
+          config_order: base.header, base.activity+community, base.repositories
           base: header, activity, community, repositories, metadata
           base_indepth: yes
+
+      - name: Metrics: Right
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.right.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          config_order: isocalendar, languages
+          base: ""
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_languages_ignored: html, css

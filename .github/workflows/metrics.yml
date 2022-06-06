@@ -30,7 +30,8 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_languages: yes
+          plugin_languages_analysis_timeout: 30
           plugin_languages_ignored: html, css
           plugin_languages_indepth: yes
-          plugin_languages_limit: 4
           plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 5%

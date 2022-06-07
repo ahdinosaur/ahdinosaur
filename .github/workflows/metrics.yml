@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       - name: Metrics - Left
-        uses: lowlighter/metrics@latest
+        uses: ahdinosaur/metrics@handle-more-repos
         with:
           filename: metrics.left.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -23,7 +23,7 @@ jobs:
           repositories: 1000
 
       - name: Metrics - Right
-        uses: lowlighter/metrics@latest
+        uses: ahdinosaur/metrics@handle-more-repos
         with:
           filename: metrics.right.svg
           token: ${{ secrets.METRICS_TOKEN }}

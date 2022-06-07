@@ -29,6 +29,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           config_order: isocalendar, languages
           base: ""
+          debug: yes
           repositories: 1000
           plugin_isocalendar: yes
           plugin_languages: yes

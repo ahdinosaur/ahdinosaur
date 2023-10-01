@@ -21,6 +21,7 @@ jobs:
           base: header, activity, community, repositories, metadata
           base_indepth: yes
           repositories: 5000
+          repositories_batch: 50
 
       - name: Metrics - Right
         uses: ahdinosaur/metrics@handle-more-repos
@@ -31,6 +32,7 @@ jobs:
           base: ""
           debug: yes
           repositories: 5000
+          repositories_batch: 50
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_languages_analysis_timeout: 30

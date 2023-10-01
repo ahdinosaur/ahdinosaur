@@ -1,11 +1,11 @@
 name: Metrics
 on:
   # Schedule updates (each day)
-  schedule: [{cron: "0 0 * * *"}]
+  schedule: [{ cron: "0 0 * * *" }]
   # Run workflow manually
   workflow_dispatch:
   # Run workflow when pushing on main
-  push: {branches: ["main"]}
+  push: { branches: ["main"] }
 jobs:
   metrics:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
           config_order: base.header, base.activity+community, base.repositories
           base: header, activity, community, repositories, metadata
           base_indepth: yes
-          repositories: 1000
+          repositories: 5000
 
       - name: Metrics - Right
         uses: ahdinosaur/metrics@handle-more-repos
@@ -30,10 +30,10 @@ jobs:
           config_order: isocalendar, languages
           base: ""
           debug: yes
-          repositories: 1000
+          repositories: 5000
           plugin_isocalendar: yes
           plugin_languages: yes
-          # plugin_languages_analysis_timeout: 30
+          plugin_languages_analysis_timeout: 30
           plugin_languages_ignored: html, css, vim script
           # plugin_languages_indepth: yes
           # plugin_languages_recent_load: 1000
